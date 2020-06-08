@@ -1,7 +1,7 @@
 ?php
 /*
 Plugin Name: WeatherPress Dashboard
-Plugin URI: https://github.com/WebAssembler/weatherpress-dashboard
+Plugin URI: https://github.com/ALDENCO/WPWeatherPlugin
 Description: An API-driven weather widget for the dashboard
 Version: 1.0
 Author: Alex Myers
@@ -9,18 +9,18 @@ Author URI: https://www.alexrmyers.com
 Text Domain: wep
 */
 
-// https://codex.wordpress.org/Function_Reference/wp_add_dashboard_widget
-// Register the new dashboard widget with the 'wp_dashboard_setup' action
+<!-- // https://codex.wordpress.org/Function_Reference/wp_add_dashboard_widget -->
+<!-- // Register the new dashboard widget with the 'wp_dashboard_setup' action -->
 add_action( 'wp_dashboard_setup', 'wep_add_dashboard_widgets' );
 
 
 
-// Load in requirements from vendor folder
+<!-- Load in requirements from vendor folder -->
 if( file_exists( __DIR__ . '/vendor/autoload.php' ) ){
 require 'vendor/autoload.php';
 }
 
-// Load the Guzzle Library
+<!-- // Load the Guzzle Library -->
 use GuzzleHttp\Client;
 
 
@@ -53,7 +53,7 @@ $response = $client->request('GET', 'weather', [
 $payload = $response->getBody()->getContents();
 $weather_data = json_decode( $payload );
 
-echo sprintf('<h2>%s, ArizonaK</h2>', $weather_data->name); // City name
+echo sprintf('<h2>%s, AZ</h2>', $weather_data->name); // City name
 echo sprintf('<h3>%s %s</h3>', date('l'), date('h:00')); // Current day and time
 
 
