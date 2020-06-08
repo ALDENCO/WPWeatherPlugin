@@ -1,0 +1,22 @@
+{
+  "name": "ALDENCO/weatherpress-dashboard",
+  "description": "Weather Press Dashboard - A custom weather widget for the WordPress Dashboard",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "apis",
+    "weather"
+  ],
+  "homepage": "https://www.alexrmyers.com/",
+  "authors": [
+    {
+      "name": "Alex Myers",
+      "email": "alexdevelopsarizona@gmail.com",
+      "homepage": "https://www.alexrmyers.com"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "guzzlehttp/guzzle": "~6.0"
+  }
+}
